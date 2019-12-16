@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Top10Trab.Models.Placar>
+
+@{
+    ViewData["Title"] = "Top10";
+}
+
+<h2>TOP 10 - OS MELHORES</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pontuacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JogadorID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pontuacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JogadorID)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
